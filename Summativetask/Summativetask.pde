@@ -1,3 +1,4 @@
+int loop = 0;
 int speed = 2;
 int size = 2;
 int pointy=0;
@@ -8,16 +9,27 @@ int brightness = 0;
 void setup() {
   size(1000, 750);
   background(255);
+  fill(0);
+   textSize(16);
+  text("Press a to increase the size of the line",680,20);
+  text("Press s to decrease the size of the line",680,50);
+  text("Press r to change the colour to red",680,80);
+  text("Press g to change the colour to green",680,110);
+  text("Press b to change the colour to black",680,140);
+  text("Press w to make an invisible line",680,170);
   colorMode(HSB, 360, 100, 100);
-  rectMode(CENTER);
-  textMode(CENTER);
+ 
+  ;
 }
 void draw() {
   //fill for the line
   fill(0,0,0);
-  rect(700,375,10,750);
-  textSize(24);
-  text("haha",760,10);
+  while(loop<6){
+    rectMode(CORNER);
+    loop+=1;
+    rect(790-20*loop,0+50*loop,5,050);
+  }
+  rectMode(CENTER);
   fill(hue, saturation, brightness);
   noStroke();
   rect(pointx, pointy, size, size);
@@ -49,16 +61,23 @@ void draw() {
     }
 //makes it so it doesnt go off the screen
   if (pointx<=0) {
-    pointx+=1;
+    pointx+=2;
   }
-  if (pointx>=1000) {
-    pointx-=1;
+  if (pointx>=665) {
+    pointx-=2;
   }
   if(pointy<=0){
-  pointy+=1;
+  pointy+=2;
 }
 if(pointy>=750){
-  pointy-=1;
+  pointy-=2;
+}
+//makes it move diagonally
+if(keyPressed==true){
+  if(key=='h'&key=='j'){
+    pointx+=speed;
+    pointy+=speed;
+  }
 }
 //makes it move up down left and right
   if (keyPressed==true)
