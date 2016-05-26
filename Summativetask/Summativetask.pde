@@ -10,8 +10,8 @@ void setup() {
   size(1000, 750);
   background(255);
   fill(0);
-   textSize(16);
-  text("Press a to increase the size of the line",680,20);
+    textSize(16);
+  text("Press a to increase the size of the line",680,300);
   text("Press s to decrease the size of the line",680,50);
   text("Press r to change the colour to red",680,80);
   text("Press g to change the colour to green",680,110);
@@ -24,10 +24,18 @@ void setup() {
 void draw() {
   //fill for the line
   fill(0,0,0);
-  while(loop<6){
+ 
+  while(loop<4){
     rectMode(CORNER);
     loop+=1;
-    rect(790-20*loop,0+50*loop,5,050);
+    rect(790-30*loop,-50+50*loop,5,50);
+    rect(790-30*loop,-50+50*loop,35,5);
+    rect(790,0,210,5);
+    rect(790-30*loop,800-50*loop,5,50);
+    
+  }
+  if(loop==4){
+    loop=0;
   }
   rectMode(CENTER);
   fill(hue, saturation, brightness);
@@ -103,6 +111,13 @@ if(keyPressed==true){
       pointx=0;
       pointy=0;
       size=2;
+        textSize(16);
+  text("Press a to increase the size of the line",680,300);
+  text("Press s to decrease the size of the line",680,50);
+  text("Press r to change the colour to red",680,80);
+  text("Press g to change the colour to green",680,110);
+  text("Press b to change the colour to black",680,140);
+  text("Press w to make an invisible line",680,170);
       rect(pointx, pointy, size, size);
     }
 }
