@@ -11,6 +11,7 @@ void setup() {
   background(255);
   fill(0);
   textSize(14);
+  //the list of instructions on the right side
   text("Press a to increase the size of the line", 680, 260);
   text("Press s to decrease the size of the line", 680, 290);
   text("Press r to change the colour to red", 680, 320);
@@ -28,7 +29,7 @@ void setup() {
 void draw() {
   //fill for the line
   fill(0, 0, 0);
-
+//creates the lines around the instructions on how to use the program
   while (loop<4) {
     rectMode(CORNER);
     loop+=1;
@@ -51,7 +52,7 @@ void draw() {
   if(pointx>=670&pointy>=150&pointy<=600){
     pointx-=2;
   }
-  println(pointy);
+  
   if (loop==4) {
     loop=0;
   }
@@ -148,12 +149,16 @@ void draw() {
       pointy=0;
       size=2;
       textSize(16);
-      text("Press a to increase the size of the line", 680, 300);
-      text("Press s to decrease the size of the line", 680, 50);
-      text("Press r to change the colour to red", 680, 80);
-      text("Press g to change the colour to green", 680, 110);
-      text("Press b to change the colour to black", 680, 140);
-      text("Press w to make an invisible line", 680, 170);
+     text("Press a to increase the size of the line", 680, 260);
+  text("Press s to decrease the size of the line", 680, 290);
+  text("Press r to change the colour to red", 680, 320);
+  text("Press g to change the colour to green", 680, 350);
+  text("Press b to change the colour to black", 680, 380);
+  text("Press w to make an invisible line", 680, 410);
+  text("Press h to make the line move down and right",680,440);
+  text("Press j to make the line move down and left",680,470);
+ text("Press k to make the line move up and left",680,500);
+ text("Press l to make the line move up and right",680,530);
       rect(pointx, pointy, size, size);
     }
 }
